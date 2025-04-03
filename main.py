@@ -16,7 +16,7 @@ import discord
 from discord import Embed, Colour, app_commands
 from discord.ext import commands, tasks
 #import json
-from replit import db
+#from replit import db
 #import aiohttp
 #import random
 from datetime import datetime, timezone
@@ -28,15 +28,24 @@ import typing
 
 #from keep import keep_alive
 #keep_alive()
-
-from cogs.cog1 import Greetings
-from cogs.cog2 import Moderating
-from cogs.cog3 import Games
-from cogs.cog4 import spy
-from cogs.cog5 import SoulWorker
-from cogs.cog8 import Fun
-from cogs.cog9 import Music
+try:
+	from cogs.cog1 import Greetings
+	from cogs.cog2 import Moderating
+	from cogs.cog3 import Games
+	#from cogs.cog4 import spy
+	from cogs.cog5 import SoulWorker
+	from cogs.cog8 import Fun
+	from cogs.cog9 import Music
+except Exception as e:
+	print(e)
 # need to find a better way
+
+
+import pymongo
+
+myclient = pymongo.MongoClient("mongodb://localhost:27017/")
+db = myclient["mydatabase"]
+## replaced replit.db with mongoDB
 
 
 h_cmd = commands.MinimalHelpCommand(no_category="Others")
