@@ -10,6 +10,7 @@ yt-dlp
 PyNaCl
 opuslib
 google-trans-new
+wolframalpha
 Flask
 replit
 discord
